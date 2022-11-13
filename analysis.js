@@ -18,7 +18,7 @@ console.log(net_total_money_array);
 
 // net profit/loss for whole period averaged out over each month
 var avg_monthly_net = Math.round((net_total_money / total_months) * 100) / 100;
-var avg_monthly_net_array = "Average net total of profit/losses over every month: ($" + avg_monthly_net + ")";
+var avg_monthly_net_array = "Average net total of profit/losses every month over whole period: ($" + avg_monthly_net + ")";
 console.log(avg_monthly_net_array);
 
 // monthly profit/loss from dataset put into variable
