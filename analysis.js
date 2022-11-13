@@ -64,22 +64,22 @@ console.log(avg_chng_in_monthly_money)
 // print avereage change in monthly money
 console.log(avg_chng_in_monthly_money / (monthly_money.length-1));
 
-// Greatest profit
-var great_profit = Math.max(...monthly_money);
-console.log(great_profit);
+// Greatest profit (increase in profit)
+var great_profit_inc = Math.max(...chng_in_monthly_money);
+console.log(great_profit_inc);
 // Find the index of greatest profit
-var profit_i = monthly_money.indexOf(great_profit);
+var profit_i = chng_in_monthly_money.indexOf(great_profit_inc) + 1;
 console.log(profit_i);
 // find array with greatest profit in finances data
-var profit_array = finances[profit_i];
+var profit_array = finances[profit_i][0] + "    " + great_profit_inc;
 console.log(profit_array);
 
-// Greatest loss
-var great_loss = Math.min(...monthly_money);
-console.log(great_loss);
+// Greatest profit (greatest decrease in profit)
+var great_profit_dec = Math.min(...chng_in_monthly_money);
+console.log(great_profit_dec);
 // Find the index of greatest loss
-var loss_i = monthly_money.indexOf(great_loss);
+var loss_i = chng_in_monthly_money.indexOf(great_profit_dec) + 1;
 console.log(loss_i);
 // find array with greatest loss in finances data
-var loss_array = finances[loss_i];
+var loss_array = finances[loss_i][0] + "    " + great_profit_dec;
 console.log(loss_array);
