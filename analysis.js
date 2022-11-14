@@ -26,6 +26,13 @@ for (i = 0; i < finances.length; i++) {
     monthly_money[i] = finances[i][1];
 }
 
+// Highest profit month
+var highest_profit_month = finances[monthly_money.indexOf(Math.max(...monthly_money))];
+var highest_profit_month_array = "Highest profit month: " + highest_profit_month[0] + " ($" + highest_profit_month[1] + ")";
+
+// Highest loss month
+var highest_loss_month = finances[monthly_money.indexOf(Math.min(...monthly_money))];
+var highest_loss_month_array = "Highest loss month: " + highest_loss_month[0] + " ($" + highest_loss_month[1] + ")";
 
 // change in monthly_money between months
 // initialise chng_in_monthly_money
@@ -33,7 +40,7 @@ var chng_in_monthly_money = [];
 
 // calculate array of monthly change - from month to month
 // initialise from second month onwards
-for (i = 1; i < monthly_money.length; i++ ) {
+for (i = 1; i < monthly_money.length; i++) {
     chng_in_monthly_money[i - 1] = monthly_money[i] - monthly_money[i - 1];
 }
 
@@ -46,7 +53,7 @@ for (i = 0; i < chng_in_monthly_money.length; i++) {
     ttl_chng_in_monthly_money += chng_in_monthly_money[i];
 }
 
-avg_chng_in_monthly_money = ttl_chng_in_monthly_money/(monthly_money.length-1);
+avg_chng_in_monthly_money = ttl_chng_in_monthly_money / (monthly_money.length - 1);
 // below is commented out simple way of calculating the avg_chng_in_monthly_money
 // var avg_chng_in_monthly_money = (finances[finances.length - 1][1] - finances[0][1]) / (total_months - 1);
 // appropriate rounding of currency
@@ -83,16 +90,18 @@ var loss_array = "Greatest decrease in Profits between months:  " + finances[los
 
 // printing analysis to console
 var finances_analysis =
-`Financial Analysis
+    `Financial Analysis
 ---------------------------------
 ` + total_months_array + `
 ` + net_total_money_array + `
+` + highest_profit_month_array + `
+` + highest_loss_month_array + `
 ` + avg_monthly_net_array + `
 ` + change_in_period_per_month_array + `
 ` + avg_monthly_money_fluc_array + `
 ` + profit_array + `
 ` + loss_array
-;
+    ;
 
 
 console.log(finances_analysis)
