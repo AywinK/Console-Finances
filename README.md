@@ -2,7 +2,7 @@
 
 ## Description
 Financial analysis carried out using JavaScript with output displayed within the chrome dev tools console. The expected output is shown below.
- ![Financial Analysis screenshot](/Images/Console-Finances_screenshot.png)
+ ![Financial Analysis screenshot](/assets/Images/Console-Finances_screenshot.png)
 ## Deployment
 The analysis webpage is deployed using GitHub Pages. The analysis can be accessed by opening the console at: https://aywink.github.io/Console-Finances/
 ## Usage
